@@ -1,0 +1,1 @@
+Zorg er voor dat de installer in een map zit, dit zorgt er voor dat het downloaden eenvoudiger is en je de map makkelijker kunt vinden
