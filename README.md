@@ -2,8 +2,6 @@
 
 Welcome to Sidney's Installer, a special installer for Windows built with Python! 🚀
 
-![Sidney's Installer Logo](https://yourlogo.png)
-
 ## Overview
 
 Sidney's Installer offers a convenient way to install various applications on Windows systems. It provides users with a selection of apps to choose from, with new additions every month. Whether you're looking for productivity tools, entertainment apps, or utilities, Sidney's Installer has you covered.
