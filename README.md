@@ -20,7 +20,7 @@ Sidney's Installer offers a convenient way to install various applications on Wi
 To get started with Sidney's Installer, follow these steps:
 
 1. Download the latest release from the [Releases](https://github.com/yourusername/sidneys-installer/releases) page.
-2. Run the installer executable (`sidneys-installer.exe`).
+2. Run the installer executable (`installer.exe`).
 3. Choose the apps you want to install from the available options.
 4. Sit back and let Sidney's Installer handle the installation process for you.
 
