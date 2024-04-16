@@ -1,41 +1,41 @@
-<h2 align="left">🌐 Sidney's installer 🌐</h2>
+# Sidney's Installer
 
-###
+Welcome to Sidney's Installer, a special installer for Windows built with Python! 🚀
 
-<h1 align="center">❓ Hoe</h1>
+![Sidney's Installer Logo](https://yourlogo.png)
 
-###
+## Overview
 
-<h3 align="left">Sidney's installer is gemaakt met python en omgezet naar .exe met nuitka.<br><br>Met behulp van wget is het mogelijk om apps te downloaden via een bestand :)</h3>
+Sidney's Installer offers a convenient way to install various applications on Windows systems. It provides users with a selection of apps to choose from, with new additions every month. Whether you're looking for productivity tools, entertainment apps, or utilities, Sidney's Installer has you covered.
 
-###
+## Features
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="30" alt="typescript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="react logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="30" alt="c logo"  />
-</div>
+- **Easy Installation**: Simply run Sidney's Installer and choose the apps you want to install.
+- **Regular Updates**: New apps are added every month, ensuring a constantly expanding selection.
+- **No Downloading Restrictions**: Ideal for use on computers with downloading restrictions, ensuring accessibility for all users.
+- **Totally Free**: Sidney's Installer is free to use, forever.
 
-###
+## Getting Started
 
-<div align="left">
-  <a href="https://www.instagram.com/sdny_hn/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="instagram logo"  />
-  </a>
-  <img src="https://img.shields.io/static/v1?message=Twitch&logo=twitch&label=&color=9146FF&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="twitch logo"  />
-  <a href="discordapp.com/users/829341458724552774" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
-  </a>
-</div>
+To get started with Sidney's Installer, follow these steps:
 
-###
+1. Download the latest release from the [Releases](https://github.com/yourusername/sidneys-installer/releases) page.
+2. Run the installer executable (`sidneys-installer.exe`).
+3. Choose the apps you want to install from the available options.
+4. Sit back and let Sidney's Installer handle the installation process for you.
 
-<img align="right" height="150" src="https://i.pinimg.com/564x/ee/ad/58/eead582d53a43c27264971de55cbc1cd.jpg"  />
+## What is Nuitka?
 
-###
+Nuitka is a Python compiler that translates Python code into optimized C code, which can then be compiled into native binaries. This allows Python programs to run faster and more efficiently, making them suitable for distribution as standalone executables.
+
+To learn more about Nuitka, visit the [Nuitka GitHub repository](https://github.com/Nuitka/Nuitka).
+
+## Contributing
+
+We welcome contributions to Sidney's Installer! If you have ideas for new features, apps to add, or improvements to make, feel free to fork the repository and submit a pull request.
+
+For guidelines on contributing, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
