@@ -13,10 +13,9 @@ def get_random_quote():
 
 def print_quote(quote_data):
     if quote_data:
-        cprint("Een random quote:\n", 'white')
         for q in quote_data:
             cprint(f'"{q["content"]}"\n', 'white')
-            cprint(f"- {q['author']}", 'white')
+            cprint(f"- {q['author']}\n", 'white')
 
 def quote():
     quote_data = get_random_quote()

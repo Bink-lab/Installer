@@ -6,92 +6,119 @@ import requests
 from termcolor import colored, cprint
 import subprocess
 from func.funcs import *
+from func.api.update import *
 
-# VERGEET NIET DE NIEUWE VERSIE TE NOEMEN
+# REMEMBER TO NAME THE NEW VERSION
+
+# Create the 'downloads' folder if it doesn't exist
+if not os.path.exists("downloads"):
+    os.makedirs("downloads")
+
+def open_subfolder(subfolder_name):
+    # Get the directory of the current script
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    
+    # Construct the path to the subfolder
+    subfolder_path = os.path.join(current_directory, subfolder_name)
+    
+    try:
+        # Open the subfolder in file explorer
+        subprocess.Popen(['explorer', subfolder_path], shell=True)
+    except OSError:
+        print(f"Subfolder '{subfolder_name}' not found.")
+
+# Example usage:
+subfolder_name = "downloads"  # Adjusted to match the subfolder name
 
 # Autoclicker
 file_to_run = "/apps/main.exe"
 
-def esc():
-    print("\n[ Druk op 'esc' om te stoppen ]")
-    keyboard.wait("esc")
-    exit()
-    
-
-
-# Maak de map 'downloads' aan als deze niet bestaat
-if not os.path.exists("downloads"):
-    os.makedirs("downloads")
-
 def custom():
-    # Vraag de gebruiker om een link te geven
-    url = input("\n[ Directe link ] : ")
+    try:
+        # Ask the user to provide a link
+        url = input(colored("\n[ Direct link ] : ", 'white'))
 
-    # Maak de map 'downloads' aan als deze niet bestaat
-    if not os.path.exists("downloads"):
-        os.makedirs("downloads")
+        filename = wget.download(url, out="downloads")
 
-    filename = wget.download(url, out="downloads")
+        cprint(f"\n\n[ INFO ] File downloaded: {filename}", 'white')
+        time.sleep(2)
+        shortcuts()
+    except Exception as e:
+        # Handle the error gracefully
+        cprint(f"\n[ ERROR ] An error occurred during the download: {e}", ' white')
+        # Optionally, you can log the error, display a user-friendly message, or attempt to recover
 
-    cprint(f"\n\n[ INFO ] Bestand gedownload: {filename}", 'white')
-    time.sleep(2)
-    shortcuts()
 
 def shortcuts():
     import os
     os.system("cls")
     watermark()
-    cprint("\n\n[ Shortcuts ]\n", 'light_red')
-    cprint("[01] Roblox" , 'white')
-    cprint("[02] Opera GX [ Nieuwste ]", 'white')
-    cprint("[03] Discord [ Ouder ]", 'white')
-    cprint("[04] Minecraft [ Cracked SKLauncher ]", 'light_red')
-    cprint("[05] Skype [ Nieuwste ]", 'white')
-    cprint("[06] Autoclicker [ Custom ]", 'white')
-    cprint("[07] Macro", 'white')
-    cprint("[08] Games [ Binnenkort 😈 ]", 'light_red')
-    cprint("\n[0] Eigen", 'light_red')
 
-    nummer = input(colored("\n[ Shortcut ] : ", 'white'))
+    # Define colors
+    color_normal = 'white'
+    color_broken = 'light_red'
+    color_unfinished = 'light_yellow'
+    
+    # Print border and title
+    cprint("╔══════════════════════════════════════════════════╗", color_normal)
+    cprint("║                   Shortcuts                      ║", color_normal)
+    cprint("╠══════════════════════════════════════════════════╣", color_normal)
+    
+    # Print options
+    cprint("║ [01] Roblox" , color_normal)
+    cprint("║ [02] Opera GX", color_normal)
+    cprint("║ [03] Discord", color_normal)
+    cprint("║ [04] Minecraft [ Titan Launcher ]", color_unfinished)
+    cprint("║ [05] Skype", color_normal)
+    cprint("║ [06] Autoclicker [ Custom ]", color_normal)
+    cprint("║ [07] Macro", color_normal)
+    cprint("║ [08] Games [ Coming Soon 😈 ]", color_broken)
+    cprint("║", color_normal)
+    cprint("║ [0] Custom", color_normal)
+    cprint("║", color_normal)
+    cprint("║ [00] Open Download Folder", color_normal)
+    
+    # Print bottom border
+    print("╚══════════════════════════════════════════════════╝")
+
+
+    nummer = input(colored("\n[ Number ] : ", 'white'))
     if nummer == "01":
-            os.system("cls")
-            watermark()
-            cprint(f"\n[ Roblox ]", 'white')
-            cprint(f"\n\n[01] Roblox Player", 'white')
-            cprint(f"[02] Roblox Fps Unlocker [ Altijd Nieuwste ]", 'white')
-            cprint(f"\n[0] Terug", 'white')
-            roblox = input(colored("\n[ Nummer ] : ", 'white'))
-            os.system("cls")
-            watermark()
-            if roblox == "01":
-                url = "http://setup.rbxcdn.com/Roblox.exe"
-                filename = wget.download(url, out="downloads")
-                cprint(f"\n\n[ INFO ] Bestand gedownload: {filename}", 'white')
-                time.sleep(2)
-                shortcuts()
-            if roblox == "02":
-                url = "https://github.com/axstin/rbxfpsunlocker/releases/download/v5.2/rbxfpsunlocker-x64.zip"
-                filename = wget.download(url, out="downloads")
-                cprint(f"\n\n[ INFO ] Bestand gedownload: {filename}", 'white')
-                time.sleep(2)
-                shortcuts()
-
-            if roblox == "0":
-                shortcuts()
-            else:
-                exit()
-
-
-            cprint(f"\n\n[ INFO ] Bestand gedownload: {filename}", 'white')
+        os.system("cls")
+        watermark()
+        print("╔══════════════════════════════════════════════════╗")
+        cprint("║                   Roblox                         ║", color_normal)
+        print("╠══════════════════════════════════════════════════╣")
+        cprint("║ [01] Roblox Player", color_normal)
+        cprint("║ [02] Roblox Fps Unlocker [ Always Latest ]", color_normal)
+        cprint("║", color_normal)
+        cprint("║ [0] Back", color_normal)
+        print("╚══════════════════════════════════════════════════╝")
+        roblox = input(colored("\n[ Number ] : ", color_normal))
+        os.system("cls")
+        watermark()
+        if roblox == "01":
+            url = "http://setup.rbxcdn.com/Roblox.exe"
+            filename = wget.download(url, out="downloads")
+            cprint(f"\n\n[ INFO ] File downloaded: {filename}", color_normal)
             time.sleep(2)
             shortcuts()
+        elif roblox == "02":
+            url = "https://github.com/axstin/rbxfpsunlocker/releases/download/v5.2/rbxfpsunlocker-x64.zip"
+            filename = wget.download(url, out="downloads")
+            cprint(f"\n\n[ INFO ] File downloaded: {filename}", color_normal)
+            time.sleep(2)
+            shortcuts()
+        elif roblox == "0":
+            shortcuts()
+
 
     if nummer == "02":
         os.system("cls")
         watermark()
         url = "https://files1.majorgeeks.com/10afebdbffcd4742c81a3cb0f6ce4092156b4375/browsers/OperaGXPortable_107.0.5045.60.paf.exe"
         filename = wget.download(url, out="downloads")
-        cprint(f"\n\n[ INFO ] Bestand gedownload: {filename}", 'white')
+        cprint(f"\n\n[ INFO ] File downloaded: {filename}", 'white')
         time.sleep(2)
         shortcuts()
 
@@ -100,15 +127,17 @@ def shortcuts():
         watermark()
         url = "https://github.com/portapps/discord-portable/releases/download/1.0.9028-17/discord-portable-win32-1.0.9028-17-setup.exe"
         filename = wget.download(url, out="downloads")
-        cprint(f"\n\n[ INFO ] Bestand gedownload: {filename}", 'white')
+        cprint(f"\n\n[ INFO ] File downloaded: {filename}", 'white')
         time.sleep(2)
         shortcuts()
 
     if nummer == "04":
         os.system("cls")
         watermark()
-        cprint(f"\n[ INFO ] Minecraft werkt op het moment niet, wacht tot een latere update.", 'white')
-        time.sleep(3)
+        url = "https://git-link.vercel.app/api/download?url=https%3A%2F%2Fgithub.com%2FBink-lab%2Fshortcuts%2Fblob%2Fmain%2FMinecraft-Launcher.exe"
+        filename = wget.download(url, out="downloads")
+        cprint(f"\n\n[ INFO ] File downloaded: TitanLauncher.exe", 'white')
+        time.sleep(2)
         shortcuts()
 
     if nummer == "05":
@@ -116,7 +145,7 @@ def shortcuts():
         watermark()
         url = "https://github.com/portapps/skype-portable/releases/download/8.110.0.218-97/skype-portable-win32-8.110.0.218-97-setup.exe"
         filename = wget.download(url, out="downloads")
-        cprint(f"\n\n[ INFO ] Bestand gedownload: {filename}", 'white')
+        cprint(f"\n\n[ INFO ] File downloaded: {filename}", 'white')
         time.sleep(2)
         shortcuts()
     
@@ -125,27 +154,40 @@ def shortcuts():
         watermark()
         url = "https://github.com/Bink-lab/Installer/raw/main/Components/autoclicker.exe"
         filename = wget.download(url, out="downloads")
-        cprint(f"\n\n[ INFO ] Bestand gedownload: {filename}", 'white')
+        cprint(f"\n\n[ INFO ] File downloaded: {filename}", 'white')
         time.sleep(2)
         shortcuts()
+        
     if nummer == "07":
         os.system("cls")
         watermark()
-        cprint(f"\n\n[ Macro ]", 'white')
-        cprint(f"\n[01] TG Macro", 'white')
-        cprint(f"\n[0] Terug", 'white')
-        macro = input("\n[ Nummer ] : ")
+        print("╔══════════════════════════════════════════════════╗", color_normal)
+        cprint("║                   Macro                          ║", color_normal)
+        cprint("╠══════════════════════════════════════════════════╣", color_normal)
+        cprint("║ [01] TG Macro", color_normal)
+        cprint("║", color_normal)
+        cprint("║ [0] Back", color_normal)
+        print("╚══════════════════════════════════════════════════╝", color_normal)
+        macro = input("\n[ Number ] : ")
         if macro == "01":
             os.system("cls")
             watermark()
             url = "https://tgmacro.org/portable.zip"
             filename = wget.download(url, out="downloads")
-            cprint(f"\n\n[ INFO ] Bestand gedownload: {filename}", 'white')
+            cprint(f"\n\n[ INFO ] File downloaded: {filename}", color_normal)
             time.sleep(2)
             shortcuts()
-        if macro == "0":
+        elif macro == "0":
             shortcuts()
 
+
+    if nummer == "00":
+        os.system("cls")
+        # Code to open the directory
+        directory = os.path.join(os.getcwd(), "downloads")  # Get the path to the "downloads" directory
+        subprocess.Popen(f'explorer "{directory}"')  # Open directory in file explorer
+        shortcuts()
+    
     if nummer == "0":
         os.system("cls")
         watermark()
@@ -154,20 +196,18 @@ def shortcuts():
     else:
         os.system("cls")
         watermark()
-        cprint("\n[ INFO ] Geen geldige optie", 'white')
+        cprint("\n[ INFO ] Invalid option", 'white')
         time.sleep(1)
         os.system("cls")
         shortcuts()
 
-
 def udc():
-# Controleer op updates
+    # Check for updates
     os.system("cls")
     watermark2()
-    cprint("\n[ INFO ] Controleren op updates... ]", 'white')
+    cprint("\n[ INFO ] Checking for updates... ]", 'white')
     github()
     shortcuts()
-udc()
 
-# Menu
+udc()
 shortcuts()
