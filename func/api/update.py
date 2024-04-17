@@ -17,7 +17,7 @@ def github():
         release = response.json()
 
         # Compare the tag name with the current version
-        current_version = "2.18-Alpha"
+        current_version = "2.23-Alpha"
         # Replace with the current version
         if release["tag_name"] > current_version:
             os.system("cls")

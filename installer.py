@@ -68,18 +68,18 @@ def shortcuts():
     cprint("║ [01] Roblox" , color_normal)
     cprint("║ [02] Opera GX", color_normal)
     cprint("║ [03] Discord", color_normal)
-    cprint("║ [04] Minecraft [ Titan Launcher ]", color_unfinished)
+    cprint("║ [04] Minecraft [ Titan Launcher, Unfinished ]", color_unfinished)
     cprint("║ [05] Skype", color_normal)
-    cprint("║ [06] Autoclicker [ Custom ]", color_normal)
+    cprint("║ [06] Autoclicker [ Unfinished ]", color_unfinished)
     cprint("║ [07] Macro", color_normal)
-    cprint("║ [08] Games [ Coming Soon 😈 ]", color_broken)
+    cprint("║ [08] Games [ Unfinished ]", color_unfinished)
     cprint("║", color_normal)
     cprint("║ [0] Custom", color_normal)
     cprint("║", color_normal)
     cprint("║ [00] Open Download Folder", color_normal)
     
     # Print bottom border
-    print("╚══════════════════════════════════════════════════╝")
+    cprint("╚══════════════════════════════════════════════════╝", color_normal)
 
 
     nummer = input(colored("\n[ Number ] : ", 'white'))
@@ -179,7 +179,42 @@ def shortcuts():
             shortcuts()
         elif macro == "0":
             shortcuts()
-
+            
+    if nummer == "08":
+        os.system("cls")
+        watermark()
+        cprint("╔══════════════════════════════════════════════════╗", color_normal)
+        cprint("║                   Games                         ║", color_normal)
+        cprint("╠══════════════════════════════════════════════════╣", color_normal)
+        cprint("║ [01] 'Bloons TD 6' [ Dual Servers ]", color_normal)
+        cprint("║ [02] 'Thats not my neighbor' [ Dual Servers ] ", color_normal)
+        cprint("║ [03] 'Grand Theft Auto - San Andreas' [ Dual Servers ] [ Might not work on pc's w/o administrator ] ", color_normal)
+        cprint("║", color_normal)
+        cprint("║ [0] Back", color_normal)
+        cprint("╚══════════════════════════════════════════════════╝")
+        games = input(colored("\n[ Number ] : ", color_normal))
+        os.system("cls")
+        watermark()
+        if games == "01":
+            os.system("cls")
+            watermark()
+            url_list = ["https://dl.bzzhr.co/1780649439596244992", "https://dl.buzzheavier.com/1780612802420314112"]  # Replace with actual URLs
+            download_file(url_list, "Bloons-TD-6.zip")
+            shortcuts()
+        elif games == "02":
+            os.system("cls")
+            watermark()
+            url_list = ["https://dl.bzzhr.co/1780647335431368704", "https://dl.buzzheavier.com/1780650490968051712"]  # Replace with actual URLs
+            download_file(url_list, "Thats-Not-My-Neighbor.zip")
+            shortcuts()
+        elif games == "03":
+            os.system("cls")
+            watermark()
+            url_list = ["https://dl.bzzhr.co/1780652785249939456", "https://dl.buzzheavier.com/1780652804877488128"]  # Replace with actual URLs
+            download_file(url_list, "Grand-Theft-Auto-San-Andreas.zip")
+            shortcuts()
+        elif games == "0":
+            shortcuts()
 
     if nummer == "00":
         os.system("cls")
@@ -209,5 +244,5 @@ def udc():
     github()
     shortcuts()
 
-udc()
+#udc()
 shortcuts()
