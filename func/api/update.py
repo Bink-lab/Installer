@@ -17,7 +17,7 @@ def github():
         release = response.json()
 
         # Compare the tag name with the current version
-        current_version = "2.23-Alpha"
+        current_version = "2.25-Alpha"
         # Replace with the current version
         if release["tag_name"] > current_version:
             os.system("cls")
@@ -31,7 +31,7 @@ def github():
                 # Ask user for their choice
                 cprint("[ INFO ] Choose the update type:\n", 'white')
                 cprint("[1] Self-installer (exe)", 'white')
-                cprint("[2] Source code (zip)", 'white')
+                # cprint("[2] Source code (zip)", 'white')
                 cprint("[3] Continue with current version", 'white')
                 choice = input(colored("\n[ INFO ] Enter the number corresponding to your choice: ", 'white'))
                 if choice == '1':

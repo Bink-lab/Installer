@@ -161,13 +161,13 @@ def shortcuts():
     if nummer == "07":
         os.system("cls")
         watermark()
-        print("╔══════════════════════════════════════════════════╗", color_normal)
+        cprint("╔══════════════════════════════════════════════════╗", color_normal)
         cprint("║                   Macro                          ║", color_normal)
         cprint("╠══════════════════════════════════════════════════╣", color_normal)
         cprint("║ [01] TG Macro", color_normal)
         cprint("║", color_normal)
         cprint("║ [0] Back", color_normal)
-        print("╚══════════════════════════════════════════════════╝", color_normal)
+        cprint("╚══════════════════════════════════════════════════╝", color_normal)
         macro = input("\n[ Number ] : ")
         if macro == "01":
             os.system("cls")
@@ -183,38 +183,51 @@ def shortcuts():
     if nummer == "08":
         os.system("cls")
         watermark()
-        cprint("╔══════════════════════════════════════════════════╗", color_normal)
-        cprint("║                   Games                         ║", color_normal)
-        cprint("╠══════════════════════════════════════════════════╣", color_normal)
+        cprint("╔════════════════════════════════════════════════════════════╗", color_normal)
+        cprint("║                   Games                                    ║", color_normal)
+        cprint("╠════════════════════════════════════════════════════════════╣", color_normal)
         cprint("║ [01] 'Bloons TD 6' [ Dual Servers ]", color_normal)
         cprint("║ [02] 'Thats not my neighbor' [ Dual Servers ] ", color_normal)
         cprint("║ [03] 'Grand Theft Auto - San Andreas' [ Dual Servers ] [ Might not work on pc's w/o administrator ] ", color_normal)
+        cprint("║ [04] 'Demon Slayer - Kimetsu No Yaiba' [ Single Server, Controller Needed ] ", color_unfinished)
+        cprint("║ [05] 'Demon Slayer - Kimetsu No Yaiba' [ Test Server ] ", color_unfinished)
         cprint("║", color_normal)
         cprint("║ [0] Back", color_normal)
-        cprint("╚══════════════════════════════════════════════════╝")
+        cprint("╚════════════════════════════════════════════════════════════╝", color_normal)
         games = input(colored("\n[ Number ] : ", color_normal))
         os.system("cls")
         watermark()
         if games == "01":
             os.system("cls")
             watermark()
-            url_list = ["https://dl.bzzhr.co/1780649439596244992", "https://dl.buzzheavier.com/1780612802420314112"]  # Replace with actual URLs
+            url_list = ["https://dl.bzzhr.co/1780649439596244992", "https://dl.buzzheavier.com/1780612802420314112"]  # BLOONS TD 6
             download_file(url_list, "Bloons-TD-6.zip")
             shortcuts()
         elif games == "02":
             os.system("cls")
             watermark()
-            url_list = ["https://dl.bzzhr.co/1780647335431368704", "https://dl.buzzheavier.com/1780650490968051712"]  # Replace with actual URLs
+            url_list = ["https://dl.bzzhr.co/1780647335431368704", "https://dl.buzzheavier.com/1780650490968051712"]  # THATS NOT MY NEIGHBOR
             download_file(url_list, "Thats-Not-My-Neighbor.zip")
             shortcuts()
         elif games == "03":
             os.system("cls")
             watermark()
-            url_list = ["https://dl.bzzhr.co/1780652785249939456", "https://dl.buzzheavier.com/1780652804877488128"]  # Replace with actual URLs
+            url_list = ["https://dl.bzzhr.co/1781032464892948480", "https://dl.buzzheavier.com/1780652804877488128"]  # GTA SAN ANDREAS
             download_file(url_list, "Grand-Theft-Auto-San-Andreas.zip")
             shortcuts()
+        elif games == "04":
+            os.system("cls")
+            watermark()
+            url_list = ["https://dl.bzzhr.co/1781039510795186176", ""]  # DEMON SLAYER
+            download_file(url_list, "Demon-Slayer-Kimetsu-No-Yaiba-EMU.zip")
+            shortcuts()
+        elif games == "5":
+            game_name = "demonslayerkimetsunoyaiba"
+            filename = "Demon-Slayer-Kimetsu-No-Yaiba-EMU.zip"
         elif games == "0":
             shortcuts()
+            
+        download_file(game_name, filename)
 
     if nummer == "00":
         os.system("cls")
